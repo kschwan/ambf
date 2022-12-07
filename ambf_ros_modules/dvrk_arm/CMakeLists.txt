@@ -44,7 +44,7 @@ endif (POLICY CMP0048)
 project(dvrk_arm)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+set(CMAKE_CXX_STANDARD 17)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -153,7 +153,7 @@ find_package(Eigen3 REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES dvrk_arm
-#  CATKIN_DEPENDS geometry_msgs roscpp roslib rospy sensor_msgs std_msgs tf
+  CATKIN_DEPENDS geometry_msgs roscpp roslib rospy sensor_msgs std_msgs tf
 #  DEPENDS system_lib
 )
 

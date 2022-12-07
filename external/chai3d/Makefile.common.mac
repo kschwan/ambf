@@ -45,7 +45,7 @@ COMPILER = $(CC)
 
 # common compiler flags
 CFLAGS   += -DMACOSX -arch $(ARCH) -Qunused-arguments -Wno-deprecated
-CXXFLAGS += -DMACOSX -arch $(ARCH) -Qunused-arguments -Wno-deprecated -std=c++0x -stdlib=libc++
+CXXFLAGS += -DMACOSX -arch $(ARCH) -Qunused-arguments -Wno-deprecated -stdlib=libc++
 
 # common linker flags
 LDFLAGS  += -L/usr/lib

@@ -48,7 +48,7 @@ cmake_minimum_required (VERSION 3.1)
 project (AMBF)
 
 # Set C++ Standard
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 17)
 
 # set version info
 file (READ ${PROJECT_SOURCE_DIR}/ambf_framework/version.txt VERSION)
@@ -189,20 +189,20 @@ if (${CMAKE_SYSTEM_NAME} MATCHES Windows)
   elseif (MINGW)
     list(APPEND COMMON_DEFINITIONS -DWIN32)
     list(APPEND CHAI3D_DEFINITIONS -DHAVE_GCC_DESTRUCTOR)
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wno-deprecated -std=c++0x")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wno-deprecated")
     set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -march=native -Wno-deprecated")
   endif ()
 
 # Linux global build options
 elseif (${CMAKE_SYSTEM_NAME} MATCHES Linux)
   list(APPEND COMMON_DEFINITIONS -DLINUX)
-  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -march=native -Wno-deprecated -std=c++0x")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -march=native -Wno-deprecated")
   set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -fPIC -march=native -Wno-deprecated")
 
 # Mac OS X global build options
 elseif (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
   list(APPEND COMMON_DEFINITIONS -DMACOSX)
-  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Qunused-arguments -Wno-deprecated -std=c++0x -stdlib=libc++")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Qunused-arguments -Wno-deprecated -stdlib=libc++")
   set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Qunused-arguments -Wno-deprecated")
 endif ()
 

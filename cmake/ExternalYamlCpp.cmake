@@ -1,6 +1,6 @@
 include(ExternalProject)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(YAML_CPP_ROOT ${CMAKE_BINARY_DIR}/external/yaml_cpp)

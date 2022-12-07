@@ -62,19 +62,19 @@ unix {
   TARGET          =   ../../../bin/$$OS-$$ARCH/ModelViewer
   PRE_TARGETDEPS +=   ../../../lib/$$CFG/$$OS-$$ARCH-$$COMPILER/libchai3d.a
   LIBS           += -L../../../lib/$$CFG/$$OS-$$ARCH-$$COMPILER -lchai3d
-  LIBS           += -L../../../external/DHD/lib/$$OS-$$ARCH -ldrd  
+  LIBS           += -L../../../external/DHD/lib/$$OS-$$ARCH -ldrd
   OBJECTS_DIR    += ./obj/$$CFG/$$OS-$$ARCH-$$COMPILER
 
   contains (SYSTEM, Linux) {
     DEFINES        += LINUX
-    QMAKE_CXXFLAGS += -std=c++0x -Wno-deprecated -Wno-unused-parameter -Wno-uninitialized -Wno-unused-local-typedefs
+    QMAKE_CXXFLAGS += -std=c++17 -Wno-deprecated -Wno-unused-parameter -Wno-uninitialized -Wno-unused-local-typedefs
     LIBS           += -lusb-1.0 -lrt -ldl -lpng -lGLU -lX11
-    ICON            = chai3d.ico  
+    ICON            = chai3d.ico
   }
   contains (SYSTEM, Darwin) {
     DEFINES        += MACOSX
-    QMAKE_CXXFLAGS += -std=c++0x -stdlib=libc++
-    QMAKE_LFLAGS   += -stdlib=libc++    
+    QMAKE_CXXFLAGS += -std=c++17 -stdlib=libc++
+    QMAKE_LFLAGS   += -stdlib=libc++
     LIBS           += -framework CoreFoundation -framework IOKit -framework CoreServices -framework CoreAudio -framework AudioToolbox -framework AudioUnit
     CONFIG         += app_bundle
     ICON            = chai3d.icns
